@@ -8,7 +8,12 @@ while True:
     if inp == "c":
         first_name = input("First Name: ")
         last_name = input("Last Name: ")
-        email_address = input("Email: ")
+        while True:
+            email_address = input("Email: ")
+            if not '@' in email_address:
+                print("Enter a valid email address")
+            else:
+                break;
         ID_number = input("Number: ")
         customer_object = Customer(first_name, last_name, email_address, ID_number)
         print()
@@ -23,6 +28,7 @@ while True:
         print()
         print("EMPLOYEE")
         employee_object.display()
+
     ending = input("Continue? (y/n): ")
     print()
     if ending == "y":
